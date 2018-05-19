@@ -27,7 +27,7 @@
 ```
 def derator(func):
     def wrapper(*args,**kwargs):
-
+        # 输入你所需要的功能
         func(*args,**kwargs)
     return wrapper
 

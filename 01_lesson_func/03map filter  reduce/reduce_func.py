@@ -22,4 +22,4 @@ print(reduce_test(add,num01,20))
 
 #### 使用reduce函数
 from functools import reduce
-print (reduce(lambda x,y:x+y, num01,10))
+print(reduce(lambda x, y: x+y, num01, 10))
