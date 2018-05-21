@@ -22,7 +22,6 @@ def timer2(func):
     return func
 
 
-
 def a():
     res = 0
     for i in range(1,20):
@@ -31,11 +30,10 @@ def a():
     return res
 
 
-
-res  = timer(a)
+res = timer(a)
 print(res)
 
-a =  timer2(a)
+a = timer2(a)
 print(a())
 
 

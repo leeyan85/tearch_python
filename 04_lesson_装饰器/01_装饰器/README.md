@@ -23,13 +23,18 @@
 1. 在函数中有定义了一个函数
 
 
+#### 闭包
+闭包就是函数的作用域
+
+
 #### 装饰器的框架
 ```
-def derator(func):
-    def wrapper(*args,**kwargs):
-        # 输入你所需要的功能
-        func(*args,**kwargs)
-    return wrapper
+def derator(func):  # 接收的参数为一个函数名
+    def wrapper(*args,**kwargs):  # 接收函数所需要的参数 
+        # 输入你所需要的功能   
+        res = func(*args,**kwargs)  #  运行所接受的函数
+        return res # return 传入函数的返回值
+    return wrapper  # 返回值是一个函数名 
 
 ```
 

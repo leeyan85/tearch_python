@@ -32,13 +32,13 @@ def index():
     pass
 
 
-@auth(auth_type='filedb')  # 相当于 login = auth(login) ---> index = login(index)
+@auth(auth_type='filedb')  # 相当于 login = auth(login) ---> home = login(home)
 def home():
     print('home page')
     pass
 
 
-@auth(auth_type='filedb')  # 相当于 login = auth(login) ---> index = login(index)
+@auth(auth_type='filedb')  # 相当于 login = auth(login) ---> shoping_car = login(shoping_car)
 def shoping_car():
     print('shopping car')
     pass
