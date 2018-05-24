@@ -9,13 +9,31 @@ def time_deractor(func):
         return res
     return wrapper
 
-@time_deractor # 这个就等于 test = timmer_deractor(test)
+def check_info(info):
+    print(info)
+    def check_arg(func):
+        def wrapper(*args, **kwargs):
+            if isinstance(*args, int):
+                result = func(*args, **kwargs)
+                return result
+            else:
+                print("参数错误")
+                return "参数错误，只接受整形"
+        return wrapper
+    return check_arg
+
+
+@check_info("hello")
 def test(number):
     res = 0
     for i in range(number):
         res += i
     return res
 
-b = test(20)
+
+
+b = test('阿达地方')
 print(b)
+
+
 

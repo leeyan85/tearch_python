@@ -4,7 +4,12 @@ class Human(object):
     """
 
     def __init__(self, name):
+        print("__new__实例化一个对象后，__init__函数会对此对象进行初始化操作")
         self.name = name
+
+    def __new__(cls, name):
+        print("当对类进行实例化时，__new__首先被调用，但并不对实例进行初始化")
+        return super().__new__(cls)
 
     def __getattr__(self, item):  # 调用对象中不存在的属性时会触发这个函数
         print("当获取对象的属性不存在时，会触发函数__getattr__，当属性存在时不会触发")
@@ -35,6 +40,7 @@ class Human(object):
 
 
 P1 = Human('Lee')
+print(P1.__dict__)
 P1()
 # print(P1.__dict__)
 # print(P1.__class__)  # 显示对象是哪个类的实例化

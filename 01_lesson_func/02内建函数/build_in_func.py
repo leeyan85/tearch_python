@@ -38,7 +38,7 @@ people = [{'name':'Lee','age':32},
           {'name':'Frank','age':28}
          ]
 
-print(max(people,key=lambda x:x['age']))
+print(max(people, key=lambda x: x['age']))
 
 
 ### pow
@@ -56,11 +56,13 @@ people = [{'name': 'Lee', 'age': 32},
           {'name': 'Marlon', 'age': 30},
           {'name': 'Frank', 'age': 28}]
 
-print(sorted(people, key=lambda x:x['age']))
+print(sorted(people, key=lambda x: x['age']))
 
 age_dic = {'Lee': 32, 'Marlon': 30, 'Frank': 26}
 
-print(sorted(age_dic, key=lambda x:age_dic[x]))
+print(sorted(age_dic))
+
+print(sorted(age_dic, key=lambda x: age_dic[x]))
 
 print(sorted(zip(age_dic.values(), age_dic.keys())))
 

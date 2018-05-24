@@ -1,3 +1,4 @@
+
 def consumer(name):
     while True:
         x =  yield "%s开始吃包子" % name

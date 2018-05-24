@@ -13,7 +13,7 @@ def ask_way(person_list):
     print('%s回答道:我不知道,但念你慧眼识猪,你等着,我帮你问问%s...' %(person,person_list))
     time.sleep(3)
     res=ask_way(person_list)
-    print('%s问的结果是: %res' %(person,res))
+    print('%s问的结果是: %res' %(person, res))
     return res
 
 res=ask_way(person_list)
@@ -35,4 +35,4 @@ def a():
     print(res)
     return res
 
-a()
+
