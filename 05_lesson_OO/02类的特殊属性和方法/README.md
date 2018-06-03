@@ -143,3 +143,43 @@ print(type(p1).__dict__ == People.__dict__)
 5. 最后，找不到的属性触发__getattr__()
 
 
+
+### __enter__和__exit__上下文管理协议
+
+1. 使用with语句的目的就是把代码块放入with中执行，with结束后，自动完成清理工作，无须手动干预
+
+2. 在需要管理一些资源比如文件，网络连接和锁的编程环境中，可以在__exit__中定制自动释放资源的机制，你无须再去关系这个问题，这将大有用处
+
+#### 代码例子
+代码示例
+    
+```
+    class Open:
+        def __init__(self, name):
+            self.name = name      
+    
+        def  __enter__(self):
+            print("执行了enter方法")
+            return self
+    
+        def __exit__(self, exc_type, exc_val, exc_tb):
+            print("执行了exit方法")
+            print(exc_type)  # 对应了异常的类型
+            print(exc_val)  # 异常的具体内容
+            print(exc_tb)  # 异常的traceback
+    
+    
+    with Open('a.txt') as f:  # with 触发__enter__方法，将返回Open实例化的对象，as f语句将对象赋值给f 等同于 f = obj.__enter__()
+        print(f.__dict__)
+    
+        print(f.adfadsf)  # 当程序出错时，会调用
+        print(f.name)
+```
+
+#### 执行代码块时
+
+1. 没有异常的情况下，整个代码框运行完毕后执行__exit__
+2. 有异常的情况下，从异常出现的位置触发__exit__方法
+3. 果__exit__返回值为True, 代表吞了异常
+4. 如果__exit__返回值部位True，代表吐出了异常
+5. __exit__的运行完毕，代表了真个with与语句执行完毕
