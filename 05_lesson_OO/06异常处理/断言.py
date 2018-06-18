@@ -4,6 +4,6 @@ def test1():
 
 
 res1 = test1()
-assert res1 == 1
+assert res1 == 2
 
 print("如果没有断言异常，则会执行后边的额代码")

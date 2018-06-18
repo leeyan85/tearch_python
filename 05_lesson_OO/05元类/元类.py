@@ -4,3 +4,11 @@
 # 元类是python中类对象的实现类，自己实现的的python类都元类的对象
 
 
+class Foo:
+    pass
+
+
+f1 = Foo()
+
+print(type(f1))
+print(type(Foo))

@@ -7,7 +7,7 @@ class Shoe:
     def price(self):
         return self.origin_price * 0.8
 
-    @price.setter  # set时运行   # 可以利用property来实现类型检测功能
+    @price.setter  # set时运行, 可以利用property来实现类型检测功能
     def price(self, value):
         if isinstance(value, float):
             self.origin_price = value

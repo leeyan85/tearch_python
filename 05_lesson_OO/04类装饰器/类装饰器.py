@@ -25,8 +25,7 @@ def Typed(**kwargs):  # 这是一个装饰器
     return deco
 
 
-
-@Typed(name=str, age=int)  # 相当于deco = Typed(deco),Typed可以传入参数，Person = deco(Person)， 用装饰器的方式，给参数设置数据描述符相当于,
+@Typed(name=str, age=int)   # 相当于deco = Typed(deco),Typed可以传入参数，Person = deco(Person)，用装饰器的方式，给参数设置数据描述符
 class Person:
     def __init__(self, name, age):  # name被Str类代理,age被Int类代理,
         self.name = name

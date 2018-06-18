@@ -24,12 +24,12 @@ class Room:
         self.length = length
         self.name = name
 
-    @Lazyproperty  # 装饰器 mianji = property(mianji) 给类增加一个非数据描述符
+    @Lazyproperty  # 装饰器 mianji = Lazyproperty(mianji) 给类增加一个非数据描述符
     def mianji(self):
         return self.width * self.length
 
     @property
-    def mianji1(self):
+    def mianji1(self): # 装饰器 mianji = property(mianji1) 给类增加一个非数据描述符
         return self.width * self.length
 
 
@@ -39,5 +39,6 @@ print(r1.__dict__)
 print(r1.mianji)
 print(r1.__dict__)
 print(r1.mianji1)
+
 
 

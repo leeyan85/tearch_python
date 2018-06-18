@@ -23,7 +23,7 @@ def check_info(info):
     return check_arg
 
 
-@check_info("hello")
+#@check_info("hello")   ## 相当于 check_arg = check_info('hello'), test =  check_arg(test), 如下所示
 def test(number):
     res = 0
     for i in range(number):
@@ -31,8 +31,10 @@ def test(number):
     return res
 
 
-
-b = test('阿达地方')
+# test 之前加@ 的过程类似于这样一下的流程
+check_arg = check_info('hello')
+test = check_arg(test)
+b = test(10)
 print(b)
 
 

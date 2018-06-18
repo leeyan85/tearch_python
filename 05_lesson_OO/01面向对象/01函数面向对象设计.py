@@ -17,6 +17,6 @@ def dog(name,type,gender):
     return res
 
 
-dog1=dog('Marlon','京巴','male')
+dog1 = dog('Marlon','京巴','male')
 
 dog1['jiao'](dog1)
